@@ -210,7 +210,6 @@
 ;;; Just doing this to make it easier to note and so that I don't mess up any
 ;;; other code.
 
-
 ;;; Takes generated cutset and creates an assoc list by referencing
 ;;; original assoc-list.  This new assoc list is self-contained, the only edges 
 ;;; included are ones which connect to other vertices in the cutset.
@@ -273,11 +272,6 @@
           (blue-flag) ; t if a neighbor is blue (3rd)
           (yellow-flag)); t if a neighbor is yellow (4th in color list)
 
-        (setf red-flag nil)
-        (setf blue-flag nil)
-        (setf green-flag nil)
-        (setf yellow-flag nil)
-
         (dolist (x (cadr current))
           (let ((temp-check))
             (setf temp-check (find x color-assignment :key #'car))
@@ -334,7 +328,6 @@
 )
 
 
-
 ;;; Wrapper function to handle coloring of map in several steps.
 ;;; Requires the original assoc-list and the color list.
 ;;; Example function call: (color-map *50-states* '(R G B Y))
@@ -354,23 +347,6 @@
     (setf tree-coloring (color-greedy assoc-list color-list cutset-coloring))
     (sort tree-coloring #'alp-sort)
   )
-)
-
-
-
-;;; Function just to show an example run
-(defmacro pr (form)
-  `(format t "~%~a~%~%~a~%" ',form ,form)
-)
-
-(defun run-proj ()
-
-  (format t "~%-------------------------------------~%*50-states* with 4 colors:~%")
-  (pr (color-map *50-states* '(R G B Y)))
-  
-  (format t "~%-------------------------------------~%Australia Map with 4 colors (note only 3 used):~%")
-  (pr (color-map *australia* '(R G B Y)))
-
 )
 
 
