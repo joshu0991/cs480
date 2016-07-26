@@ -210,20 +210,26 @@
 ;;; Just doing this to make it easier to note and so that I don't mess up any
 ;;; other code.
 
+
 ;;; Takes generated cutset and creates an assoc list by referencing
 ;;; original assoc-list.  This new assoc list is self-contained, the only edges 
 ;;; included are ones which connect to other vertices in the cutset.
 (defun gen-cutset-assoc (cutset assoc-list)
-  (let ((cutset-assoc))
+
+  (let ((cutset-assoc)
+        (assoc-copy))
+    (setf assoc-copy (copy-tree assoc-list))
+
     (dolist (current cutset)
-      (setf cutset-assoc (cons (find current assoc-list :key #'car) 
+      (setf cutset-assoc (cons (find current assoc-copy :test #'equal :key #'car) 
         cutset-assoc))
     )
 
     ;; scrub new assoc-list, removing edges to vertices outside of cutset
     (dolist (current cutset-assoc)
       (dolist (x (cadr current))
-        (if (not (member x cutset))
+        ;(format t "~%finding: ~a for ~a~%" x current)
+        (if (not (member x cutset :test #'equal))
           (setf (cadr current) (remove x (cadr current)))
         )
       )
@@ -264,7 +270,7 @@
       (sorted-list))
 
     (setf color-assignment coloring)
-    (setf sorted-list (reverse (sort (copy-seq assoc-list) #'deg-sort)))
+    (setf sorted-list (reverse (sort (copy-tree assoc-list) #'deg-sort)))
 
     (dolist (current sorted-list)
       (let ((red-flag)  ; t if a neighbor is red (or whatever 1st color is)
@@ -274,7 +280,7 @@
 
         (dolist (x (cadr current))
           (let ((temp-check))
-            (setf temp-check (find x color-assignment :key #'car))
+            (setf temp-check (find x color-assignment :test #'equal :key #'car))
             (if temp-check
               (cond
                 ((eql (cdr temp-check) (nth 0 color-list)) 
@@ -293,7 +299,7 @@
 
         ;; color according to flags if the vertex isnt already in list
         ;; of color assignments
-        (if (not (find (car current) color-assignment :key #'car))
+        (if (not (find (car current) color-assignment :test #'equal :key #'car))
           (cond 
             ((not red-flag)
               (setf color-assignment (cons (cons (car current) (nth 0 color-list))
@@ -307,7 +313,7 @@
             ((not yellow-flag)
               (setf color-assignment (cons (cons (car current) (nth 3 color-list))
                 color-assignment)))
-            (t (format t "~% NO LEGAL COLOR ASSIGNMENT ~%"))
+            (t (format t "~% NO LEGAL COLOR ASSIGNMENT FOR ~A~%" current))
           )
         )
       )
@@ -347,6 +353,22 @@
     (setf tree-coloring (color-greedy assoc-list color-list cutset-coloring))
     (sort tree-coloring #'alp-sort)
   )
+)
+
+
+;;; Function just to show an example run
+(defmacro pr (form)
+  `(format t "~%~a~%~%~a~%" ',form ,form)
+)
+
+(defun run-proj ()
+
+  (format t "~%-------------------------------------~%*50-states* with 4 colors:~%")
+  (pr (color-map *50-states* '(R G B Y)))
+  
+  (format t "~%-------------------------------------~%Australia Map with 4 colors (note only 3 used):~%")
+  (pr (color-map *australia* '(R G B Y)))
+
 )
 
 
