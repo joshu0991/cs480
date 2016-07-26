@@ -228,7 +228,6 @@
     ;; scrub new assoc-list, removing edges to vertices outside of cutset
     (dolist (current cutset-assoc)
       (dolist (x (cadr current))
-        ;(format t "~%finding: ~a for ~a~%" x current)
         (if (not (member x cutset :test #'equal))
           (setf (cadr current) (remove x (cadr current)))
         )
