@@ -158,7 +158,7 @@
 
     (setf copy (remove-zero-one copy))
     (setq Gi copy)
-    (loop while (not (null Gi)) do
+    (loop while (has-cycle Gi) do
       ;; At this point in the algorithm weight is going to
       ;; always be 1 so the smallest weight to degree ration
       ;; will be the node with the largest degree. Which is at
@@ -365,8 +365,8 @@
   (format t "~%-------------------------------------~%*50-states* with 4 colors:~%")
   (pr (color-map *50-states* '(R G B Y)))
   
-  (format t "~%-------------------------------------~%Australia Map with 4 colors (note only 3 used):~%")
-  (pr (color-map *australia* '(R G B Y)))
+;;  (format t "~%-------------------------------------~%Australia Map with 4 colors (note only 3 used):~%")
+;;  (pr (color-map *australia* '(R G B Y)))
 
 )
 
