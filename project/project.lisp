@@ -60,26 +60,44 @@
                     (WI (MN IA  IL MI))            ; WI = Wisconsin
                     (WY (ID MT SD NE CO UT))))     ; WY = Wyoming
 
-;; Joshua Lilly ******************************************************************
+;;Matt Carlstrom ******************************************************************************
+(let ((explored '()))
 
-(defun remove-zero-one (list)
-
-  (format t "list is ")
-  (princ list)
-  (format t "~%")
-
-  (setq list (sort list #'(lambda(x y)(< (length (second x)) (length (second y))))))
-  (loop while (and (not (null list)) (or (eq 0 (length (second (first list)))) 
-    (eq 1 (length (second (first list)))))) do
-    (remove-from-neighbors list (second (first list)) (first (first list)))
-    (setf list (delete (first list) list))
-    (setf list (sort list #'(lambda(x y)(< (length (second x)) (length (second y))))))
-    (format t "list after deleting ")
-    (princ list)
-    (format t "~%")
+    (defun has-cycle-rec (map parent)
+  
+      ;set children to the list of nodes connected to parent
+    (let ((children (second (find-if #'(lambda (x) (equal (first x) parent)) map))))
+      ;add parent to the list of explored nodes
+      (setf explored (cons parent explored))
+      (cond ((null map) nil) ;if map is nil, then we've explored everything
+        (t (let ((cycle-found nil));otherwise
+            ;perform has-cycle-rec on each of the children
+            ;until we've reached a node we have already explored (return false)
+            (dolist (e children cycle-found)
+              (if (and (not (equal parent e)) (find e explored))
+                (setf cycle-found t)
+                (has-cycle-rec map e)
+              )
+            )
+          )
+        )
+      )
+    )
   )
-  list
+ 
+  ;wrapper function that starts out has-cycle-rec
+  (defun has-cycle (map)
+  ;start out parent as the very first node that will be explored
+    (let ((return_val (has-cycle-rec map (car (car map)))))
+      (setf explored '())
+      return_val
+    )
+  )
 )
+
+;; *******************************************************************************
+
+;; Joshua Lilly ******************************************************************
 
 ;; example call  (remove-from-neighbors *australia* (second (first *australia*)) 'WA)
   ;; will remove wa from the list portion of all elements in *australia*
@@ -120,6 +138,25 @@
       )
     )
   )
+)
+
+(defun remove-zero-one (list)
+
+  (format t "list is ")
+  (princ list)
+  (format t "~%")
+
+  (setq list (sort list #'(lambda(x y)(< (length (second x)) (length (second y))))))
+  (loop while (and (not (null list)) (or (eq 0 (length (second (first list)))) 
+    (eq 1 (length (second (first list)))))) do
+    (remove-from-neighbors list (second (first list)) (first (first list)))
+    (setf list (delete (first list) list))
+    (setf list (sort list #'(lambda(x y)(< (length (second x)) (length (second y))))))
+    (format t "list after deleting ")
+    (princ list)
+    (format t "~%")
+  )
+  list
 )
 
 ;; return the largest degree in the given lst
