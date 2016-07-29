@@ -1131,7 +1131,8 @@
 	  (loop with l = (length input-list-copy)
 	     for i below l
 	     do (rotatef (nth i input-list-copy)
-	         (nth (random l) input-list-copy)))
+	         (nth (random l) input-list-copy))
+	     )
 	  input-list-copy)
 	)
 
@@ -1211,11 +1212,11 @@
             ((not yellow-flag)
               (setf color-assignment (cons (cons (car current) (nth 3 color-list))
                 color-assignment)))
-            (t (format t "~%     NO LEGAL COLOR ASSIGNMENT FOR ~a~%" current)
-            	(setf fail-count (1+ fail-count))
+            (t 	(return-from color-greedy) 
+            	;(format t "~%     NO LEGAL COLOR ASSIGNMENT FOR ~a~%Cancelling this attempt..." current)
+            	;(setf fail-count (1+ fail-count))
             	)
           )
-          ;(format t "~%~% ALREADY THERE: ~a~%~%" (car current))
         )
         
       )
@@ -1263,7 +1264,7 @@
     	((= (length tree-coloring) (length assoc-list))
     		(format t "~%Success on attempt ~a:" (1+ i)))
     	
-    	(format t "~%Attempt ~a failed, trying again....~%****************~%" (1+ i))
+    	(format t "~%Attempt ~a failed, trying again...." (1+ i))
 
     	(setf cutset-coloring (color-greedy cutset-assoc color-list nil 2))
     	(setf tree-coloring (color-greedy assoc-list color-list cutset-coloring 2))
