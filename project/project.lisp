@@ -82,10 +82,10 @@
  "Tunisia"
  "Western Sahara"
 )) ( "American Samoa" (
-)) ( "Amsterdam Island and Île Saint-Paul" (
+)) ( "Amsterdam Island and Île Saint-Paul" (
 )) ( "Andorra" ("France"
  "Spain"
-)) ( "Angola" ("Democratic Republic of the Congo "
+)) ( "Angola" ("Democratic Republic of the Congo"
  "Republic of the Congo"
  "Namibia"
  "Zambia"
@@ -105,7 +105,7 @@
 )) ( "Aruba" (
 )) ( "Ashmore and Cartier Islands" (
 )) ( "Australia" (
-)) ( "Australian Antarctic Territory" ("Adélie Land "
+)) ( "Australian Antarctic Territory" ("Adélie Land"
  "Queen Maud Land"
  "Ross Dependency"
 )) ( "Austria" ("Czech Republic"
@@ -115,7 +115,7 @@
  "Liechtenstein"
  "Slovakia"
  "Slovenia"
- " Switzerland"
+ "Switzerland"
 )) ( "Azerbaijan" ("Armenia"
  "Georgia"
  "Iran"
@@ -124,11 +124,11 @@
 )) ( "Azores" (
 )) ( "Bahamas" (
 )) ( "Bahrain" (
-)) ( "Baker Island and Howland Island" (
+)) ( "Baker Island and Howland Island" (
 )) ( "Bangladesh" ("Burma"
  "India"
 )) ( "Barbados" (
-)) ( "Bassas da India, Europa Island, and Juan de Nova Island" (
+)) ( "Bassas da India, Europa Island, and Juan de Nova Island" (
 )) ( "Belarus" ("Latvia"
  "Lithuania"
  "Poland"
@@ -204,7 +204,7 @@
  "Equatorial Guinea"
  "Gabon"
  "Nigeria"
-)) ( "Canada" ("United States "
+)) ( "Canada" ("United States"
 )) ( "Cape Verde" (
 )) ( "Cayman Islands" (
 )) ( "Central African Republic" ("Cameroon"
@@ -225,22 +225,22 @@
 )) ( "People's Republic of China" ("Afghanistan"
  "Bhutan"
  "Burma"
- "Hong Kong "
- "India "
+ "Hong Kong"
+ "India"
  "Kazakhstan"
  "North Korea"
  "Kyrgyzstan"
  "Laos"
  "Macau"
  "Mongolia"
- "  Nepal"
+ "Nepal"
  "Pakistan"
  "Russia"
  "Tajikistan"
  "Vietnam"
 )) ( "Christmas Island" (
 )) ( "Clipperton Island" (
-)) ( "Cocos  Islands" (
+)) ( "Cocos Islands" (
 )) ( "Colombia" ("Brazil"
  "Ecuador"
  "Panama"
@@ -277,7 +277,7 @@
 )) ( "Crozet Islands" (
 )) ( "Cuba" (
 )) ( "Curaçao" (
-)) ( "Cyprus" ("Akrotiri and Dhekelia "
+)) ( "Cyprus" ("Akrotiri and Dhekelia"
 )) ( "Northern Cyprus" ("Akrotiri and Dhekelia"
  "Cyprus"
 )) ( "Czech Republic" ("Austria"
@@ -319,7 +319,6 @@
  "Brazil"
  "Liechtenstein"
  "Macedonia"
- ""
  "Monaco"
  "Montenegro"
  "Morocco"
@@ -372,7 +371,7 @@
  "Luxembourg"
  "Netherlands"
  "Poland"
- " Switzerland"
+ "Switzerland"
 )) ( "Ghana" ("Burkina Faso"
  "Côte d'Ivoire"
  "Togo"
@@ -409,8 +408,12 @@
  "El Salvador"
  "Nicaragua"
 )) ( "Hong Kong" ("People's Republic of China"
-)) ( "Howland Island andBaker Island" (
-)) ( "Hungary" ("Austria"
+)) 
+
+;( "Howland Island andBaker Island" (
+;))
+
+ ( "Hungary" ("Austria"
  "Croatia"
  "Romania"
  "Serbia"
@@ -418,15 +421,19 @@
  "Slovenia"
  "Ukraine"
 )) ( "Iceland" (
-)) ( "Île Saint-Paul andAmsterdam Island" (
-)) ( "India" ("Bangladesh"
+)) 
+
+;( "Île Saint-Paul andAmsterdam Island" (
+;))
+
+ ( "India" ("Bangladesh"
  "Bhutan"
  "Burma"
- "People's Republic of China "
- "  Nepal"
- "Pakistan "
+ "People's Republic of China"
+ "Nepal"
+ "Pakistan"
  "Sri Lanka"
-)) ( "Indonesia" ("East Timor "
+)) ( "Indonesia" ("East Timor"
  "Malaysia"
  "Papua New Guinea"
 )) ( "Iran" ("Afghanistan"
@@ -443,7 +450,7 @@
  "Syria"
  "Turkey"
 )) ( "Ireland" ("United Kingdom"
-)) ( "Isle of Man " (
+)) ( "Isle of Man" (
 )) ( "Israel" ("Egypt"
  "Gaza Strip"
  "Jordan"
@@ -454,20 +461,24 @@
  "France"
  "San Marino"
  "Slovenia"
- " Switzerland"
- " Vatican City"
+ "Switzerland"
+ "Vatican City"
 )) ( "Jamaica" (
 )) ( "Japan" (
-)) ( "Jarvis Island " (
+)) ( "Jarvis Island" (
 )) ( "Jersey" (
-)) ( "Johnston Atoll " (
+)) ( "Johnston Atoll" (
 )) ( "Jordan" ("Iraq"
  "Israel"
  "Saudi Arabia"
  "Syria"
  "West Bank"
-)) ( "Juan de Nova Island,Bassas da India, and Europa Island" (
-)) ( "Kazakhstan" ("People's Republic of China"
+)) 
+
+;( "Juan de Nova Island,Bassas da India, and Europa Island" (
+;))
+
+ ( "Kazakhstan" ("People's Republic of China"
  "Kyrgyzstan"
  "Russia"
  "Turkmenistan"
@@ -478,7 +489,7 @@
  "Tanzania"
  "Uganda"
 )) ( "Kerguelen Islands" (
-)) ( "Kingman Reef and Palmyra Atoll" (
+)) ( "Kingman Reef and Palmyra Atoll" (
 )) ( "Kiribati" (
 )) ( "North Korea" ("People's Republic of China"
  "South Korea"
@@ -516,7 +527,7 @@
  "Sudan"
  "Tunisia"
 )) ( "Liechtenstein" ("Austria"
- " Switzerland"
+ "Switzerland"
 )) ( "Lithuania" ("Belarus"
  "Latvia"
  "Poland"
@@ -536,7 +547,7 @@
 )) ( "Malawi" ("Mozambique"
  "Tanzania"
  "Zambia"
-)) ( "Malaysia" ("Brunei "
+)) ( "Malaysia" ("Brunei"
  "Indonesia"
  "Thailand"
 )) ( "Maldives" (
@@ -560,7 +571,7 @@
  "Guatemala"
  "United States"
 )) ( "Federated States of Micronesia" (
-)) ( "Midway Atoll " (
+)) ( "Midway Atoll" (
 )) ( "Moldova" ("Romania"
  "Ukraine"
 )) ( "Monaco" ("France"
@@ -574,9 +585,9 @@
 )) ( "Montserrat" (
 )) ( "Morocco" ("Algeria"
  "Western Sahara"
- "Spain "
+ "Spain"
 )) ( "Mozambique" ("Malawi"
- "South Africa "
+ "South Africa"
  "Swaziland"
  "Tanzania"
  "Zambia"
@@ -590,7 +601,7 @@
  "Zambia"
 )) ( "Nauru" (
 )) ( "Navassa Island" (
-)) ( "  Nepal" ("People's Republic of China"
+)) ( "Nepal" ("People's Republic of China"
  "India"
 )) ( "Netherlands" ("Belgium"
  "Germany"
@@ -624,10 +635,14 @@
  "Iran"
 )) ( "Palau" (
 )) ( "Palestinian territories" ("Egypt"
- "Israel "
+ "Israel"
  "Jordan"
-)) ( "Palmyra Atoll andKingman Reef " (
-)) ( "Panama" ("Colombia"
+)) 
+
+;( "Palmyra Atoll andKingman Reef" (
+;)) 
+
+( "Panama" ("Colombia"
  "Costa Rica"
 )) ( "Papua New Guinea" ("Indonesia"
 )) ( "Paraguay" ("Argentina"
@@ -649,7 +664,7 @@
  "Slovakia"
  "Ukraine"
 )) ( "Portugal" ("Spain"
-)) ( "Puerto Rico " (
+)) ( "Puerto Rico" (
 )) ( "Qatar" ("Saudi Arabia"
  "United Arab Emirates"
 )) ( "Queen Maud Land" ("Australian Antarctic Territory"
@@ -663,7 +678,7 @@
 )) ( "Ross Dependency" ("Australian Antarctic Territory"
 )) ( "Russia" ("Azerbaijan"
  "Belarus"
- "People's Republic of China "
+ "People's Republic of China"
  "Estonia"
  "Finland"
  "Georgia"
@@ -680,7 +695,7 @@
  "Tanzania"
  "Uganda"
 )) ( "Saint Barthélemy" (
-)) ( "Saint Helena, Ascension and Tristan da Cunha " (
+)) ( "Saint Helena, Ascension and Tristan da Cunha" (
 )) ( "Saint Kitts and Nevis" (
 )) ( "Saint Lucia" (
 )) ( "Saint Martin" ("Sint Maarten"
@@ -764,7 +779,7 @@
  "South Africa"
 )) ( "Sweden" ("Finland"
  "Norway"
-)) ( " Switzerland" ("Austria"
+)) ( "Switzerland" ("Austria"
  "France"
  "Italy"
  "Liechtenstein"
@@ -828,7 +843,7 @@
  "Romania"
  "Russia"
  "Slovakia"
-)) ( "United Arab Emirates" ("Oman "
+)) ( "United Arab Emirates" ("Oman"
  "Qatar"
  "Saudi Arabia"
 )) ( "United Kingdom" ("Ireland"
