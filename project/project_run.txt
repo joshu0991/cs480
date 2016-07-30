@@ -1,4 +1,4 @@
-Script started on Tue 26 Jul 2016 09:35:54 PM PDT
+Script started on Fri 29 Jul 2016 05:24:17 PM PDT
 ]0;bellum@ubuntu: ~/cs480/projectbellum@ubuntu:~/cs480/project$ sbcl
 This is SBCL 1.1.14.debian, an implementation of ANSI Common Lisp.
 More information about SBCL is available at <http://www.sbcl.org/>.
@@ -7,7 +7,7 @@ SBCL is free software, provided as is, with absolutely no warranty.
 It is mostly in the public domain; some portions are provided under
 BSD-style licenses.  See the CREDITS and COPYING files in the
 distribution for more information.
-* (load "project.lisp")
+* (load "project.l;i  isp")
 
 T
 * (run-proj)
@@ -629,6 +629,7 @@ removing MI from (WI (MI))
 list after deleting ((WI NIL))
 list after deleting NIL
 
+Success on attempt 1:
 (COLOR-MAP *50-STATES* '(R G B Y))
 
 ((AK . R) (AL . B) (AR . B) (AZ . Y) (CA . G) (CO . G) (CT . B) (DC . R)
@@ -639,6 +640,6 @@ list after deleting NIL
  (SC . R) (SD . G) (TN . R) (TX . G) (UT . R) (VA . G) (VT . B) (WA . B)
  (WI . G) (WV . Y) (WY . B))
 NIL
-*
-bellum@ubuntu: ~/cs480/projectbellum@ubuntu:~/cs480/project$ 
-Script done on Tue 26 Jul 2016 09:36:22 PM PDT
+* (quit)
+]0;bellum@ubuntu: ~/cs480/projectbellum@ubuntu:~/cs480/project$ 
+Script done on Fri 29 Jul 2016 05:24:47 PM PDT
