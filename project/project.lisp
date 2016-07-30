@@ -1293,8 +1293,8 @@
   (format t "~%-------------------------------------~%*50-states* with 4 colors:~%")
   (pr (color-map *50-states* '(R G B Y)))
   
-;;  (format t "~%-------------------------------------~%Australia Map with 4 colors (note only 3 used):~%")
-;;  (pr (color-map *australia* '(R G B Y)))
+  (format t "~%-------------------------------------~%Australia Map with 4 colors (note only 3 used):~%")
+  (pr (color-map *australia* '(R G B Y)))
 
 )
 
@@ -1302,37 +1302,3 @@
 ;;; end of DD contribution
 ;;; DD *********************************************************************
 
-;;Matt Carlstrom
-(let ((explored '()))
-
-    (defun has-cycle-rec (map parent)
-  
-      ;set children to the list of nodes connected to parent
-    (let ((children (second (find-if #'(lambda (x) (equal (first x) parent)) map))))
-      ;add parent to the list of explored nodes
-      (setf explored (cons parent explored))
-      (cond ((null map) nil) ;if map is nil, then we've explored everything
-        (t (let ((cycle-found nil));otherwise
-            ;perform has-cycle-rec on each of the children
-            ;until we've reached a node we have already explored (return false)
-            (dolist (e children cycle-found)
-              (if (and (not (equal parent e)) (find e explored))
-                (setf cycle-found t)
-                (has-cycle-rec map e)
-              )
-            )
-          )
-        )
-      )
-    )
-  )
- 
-  ;wrapper function that starts out has-cycle-rec
-  (defun has-cycle (map)
-  ;start out parent as the very first node that will be explored
-    (let ((return_val (has-cycle-rec map (car (car map)))))
-      (setf explored '())
-      return_val
-    )
-  )
-)

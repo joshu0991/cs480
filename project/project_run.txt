@@ -1,5 +1,5 @@
-Script started on Fri 29 Jul 2016 05:24:17 PM PDT
-]0;bellum@ubuntu: ~/cs480/projectbellum@ubuntu:~/cs480/project$ sbcl
+Script started on Fri 29 Jul 2016 05:41:04 PM PDT
+]0;bellum@ubuntu: ~/cs480/projectbellum@ubuntu:~/cs480/project$ sc[Kbcl
 This is SBCL 1.1.14.debian, an implementation of ANSI Common Lisp.
 More information about SBCL is available at <http://www.sbcl.org/>.
 
@@ -7,7 +7,7 @@ SBCL is free software, provided as is, with absolutely no warranty.
 It is mostly in the public domain; some portions are provided under
 BSD-style licenses.  See the CREDITS and COPYING files in the
 distribution for more information.
-* (load "project.l;i  isp")
+* (load "project.lisp")
 
 T
 * (run-proj)
@@ -639,7 +639,36 @@ Success on attempt 1:
  (NM . B) (NV . B) (NY . G) (OH . G) (OK . R) (OR . R) (PA . R) (RI . G)
  (SC . R) (SD . G) (TN . R) (TX . G) (UT . R) (VA . G) (VT . B) (WA . B)
  (WI . G) (WV . Y) (WY . B))
+
+-------------------------------------
+Australia Map with 4 colors (note only 3 used):
+list is ((WA (NT SA)) (NT (WA SA Q)) (SA (WA NT Q SW V)) (Q (NT SA SW))
+         (SW (SA Q V)) (V (SA SW)) (TS NIL))
+list after deleting ((WA (NT SA)) (V (SA SW)) (NT (WA SA Q)) (Q (NT SA SW))
+                     (SW (SA Q V)) (SA (WA NT Q SW V)))
+Removing ((SA (WA NT Q SW V)))
+The cutset is now ((SA (WA NT Q SW V)))
+removing SA from (WA (NT SA))
+removing SA from (NT (WA SA Q))
+removing SA from (Q (NT SA SW))
+removing SA from (SW (SA Q V))
+removing SA from (V (SA SW))
+list is ((WA (NT)) (V (SW)) (NT (WA Q)) (Q (NT SW)) (SW (Q V)))
+removing WA from (NT (WA Q))
+list after deleting ((V (SW)) (NT (Q)) (Q (NT SW)) (SW (Q V)))
+removing V from (SW (Q V))
+list after deleting ((NT (Q)) (SW (Q)) (Q (NT SW)))
+removing NT from (Q (NT SW))
+list after deleting ((SW (Q)) (Q (SW)))
+removing SW from (Q (SW))
+list after deleting ((Q NIL))
+list after deleting NIL
+
+Success on attempt 1:
+(COLOR-MAP *AUSTRALIA* '(R G B Y))
+
+((NT . G) (Q . B) (SA . R) (SW . G) (TS . R) (V . B) (WA . B))
 NIL
 * (quit)
 ]0;bellum@ubuntu: ~/cs480/projectbellum@ubuntu:~/cs480/project$ 
-Script done on Fri 29 Jul 2016 05:24:47 PM PDT
+Script done on Fri 29 Jul 2016 05:41:26 PM PDT
