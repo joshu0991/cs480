@@ -1,3 +1,11 @@
+;; Matt Carlstrom
+;; David DiMenna
+;; Thomas Kegal
+;; Joshua Lilly
+
+;; CS 480 Summer 2016
+;; Dr. Duric
+;; Project
 
 (defvar *australia* '( (WA (NT SA)) 
                        (NT (WA SA Q )) 
